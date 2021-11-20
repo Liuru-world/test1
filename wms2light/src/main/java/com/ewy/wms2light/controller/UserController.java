@@ -24,7 +24,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // 根据id获取用户(此方法可用于测试数据库连接、异常、RESTful风格以及日志)
+    // 根据id获取用户(此方法可用于测试数据库连接、异常、RESTful风格、git以及日志)
     @GetMapping("/userById/{id}")
     public HttpReturn getUserById(@PathVariable("id") Integer id){
         try {
