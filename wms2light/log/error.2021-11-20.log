@@ -1,0 +1,10 @@
+2021-11-20 13:54:41 ERROR http-nio-8080-exec-1 com.ewy.wms2light.controller.UserController 根据id查询用户失败
+2021-11-20 14:50:14 ERROR http-nio-8080-exec-3 com.ewy.wms2light.controller.UserController 增加用户失败
+2021-11-20 14:55:00 ERROR http-nio-8080-exec-3 com.ewy.wms2light.controller.UserController 增加用户失败
+2021-11-20 14:55:36 ERROR http-nio-8080-exec-1 com.ewy.wms2light.controller.UserController 增加用户失败
+2021-11-20 14:58:57 ERROR http-nio-8080-exec-1 com.ewy.wms2light.controller.UserController 增加用户失败
+2021-11-20 14:59:42 ERROR http-nio-8080-exec-1 com.ewy.wms2light.controller.UserController 增加用户失败
+2021-11-20 15:02:02 ERROR http-nio-8080-exec-1 com.ewy.wms2light.controller.UserController 增加用户失败
+2021-11-20 15:02:02 ERROR http-nio-8080-exec-2 com.ewy.wms2light.controller.UserController 增加用户失败
+2021-11-20 15:16:09 ERROR http-nio-8080-exec-5 com.ewy.wms2light.controller.UserController 根据id查询用户失败
+2021-11-20 15:17:18 ERROR http-nio-8080-exec-1 com.ewy.wms2light.controller.UserController 根据id查询用户失败
