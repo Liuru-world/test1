@@ -11,4 +11,8 @@ public interface UserService {
     public  List<User> getUsers();
     //增加用户
     public Integer insertUser(User user);
+
+    Integer updateUser(User user);
+
+    Integer deleteUserById(Integer id);
 }

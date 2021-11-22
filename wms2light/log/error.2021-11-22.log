@@ -27,3 +27,9 @@ Action:
 
 Correct the classpath of your application so that it contains a single, compatible version of springfox.documentation.builders.RequestHandlerSelectors
 
+2021-11-22 14:03:23 ERROR http-nio-8080-exec-1 com.ewy.wms2light.controller.UserController 增加用户失败
+2021-11-22 14:28:00 ERROR http-nio-8080-exec-2 com.ewy.wms2light.controller.UserController 修改用户失败
+2021-11-22 14:29:32 ERROR http-nio-8080-exec-10 com.ewy.wms2light.controller.UserController 修改用户失败
+2021-11-22 14:39:51 ERROR http-nio-8080-exec-2 com.ewy.wms2light.controller.UserController 修改用户失败
+2021-11-22 14:49:17 ERROR http-nio-8080-exec-10 com.ewy.wms2light.controller.UserController 修改用户失败
+2021-11-22 14:49:55 ERROR http-nio-8080-exec-5 com.ewy.wms2light.controller.UserController 修改用户失败

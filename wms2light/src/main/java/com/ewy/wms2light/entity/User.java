@@ -9,5 +9,5 @@ public class User {
     private String password;
     private String warehouseno;
     private String phonenumber;
-    private String role;
+    private String roleno;
 }

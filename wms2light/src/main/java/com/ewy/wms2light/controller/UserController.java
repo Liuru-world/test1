@@ -1,6 +1,5 @@
 package com.ewy.wms2light.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.ewy.wms2light.entity.User;
 import com.ewy.wms2light.exception.ParamException;
 import com.ewy.wms2light.exception.ServerErrorException;
@@ -13,9 +12,8 @@ import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.UUID;
+
 
 @Slf4j
 @RestController
@@ -59,7 +57,7 @@ public class UserController {
         }
     }
 
-    // 增加用户
+    // 增加用户,先得向关联主表插入相关数据,角色、仓库表制作相应页面,下拉框选取信息
     @PutMapping("/userInsert")
     public HttpReturn insertUser(){
         try {
@@ -67,14 +65,47 @@ public class UserController {
             user.setName("test3");
             user.setPassword("12345678");
             user.setPhonenumber("18718795795");
-            user.setWarehouseno("12345");
-            user.setRole("2");
+            user.setWarehouseno("A88888888");
+            user.setRoleno("1");
             Integer i = userService.insertUser(user);
             log.info("增加用户成功");
             return new HttpReturn(HttpCodeEnum.CREATEOK,"成功增加" + i + "名用户");
         }catch (Exception e){
             log.error("增加用户失败");
             throw new ServerErrorException(500,"增加用户失败");
+        }
+    }
+
+    // 修改用户
+    @PostMapping("/userUpdate")
+    public HttpReturn updateUser(){
+        try {
+            User user = new User();
+            user.setId(3);
+            user.setName("test3");
+            user.setPassword("12345678910");
+            user.setPhonenumber("18718795795");
+            user.setWarehouseno("A88888888");
+            user.setRoleno("1");
+            Integer i = userService.updateUser(user);
+            log.info("修改用户成功");
+            return new HttpReturn(HttpCodeEnum.OK,"成功修改" + i + "名用户");
+        }catch (Exception e){
+            log.error("修改用户失败");
+            throw new ServerErrorException(500,"修改用户失败");
+        }
+    }
+
+    // 根据id删除用户
+    @DeleteMapping("/userDeleteById/{id}")
+    public HttpReturn deleteUserById(@PathVariable("id")Integer id){
+        try {
+            Integer i = userService.deleteUserById(id);
+            log.info("删除用户成功");
+            return new HttpReturn(HttpCodeEnum.OK,"成功删除" + i + "名用户");
+        }catch (Exception e){
+            log.error("删除用户失败");
+            throw new ServerErrorException(500,"删除用户失败");
         }
     }
 }

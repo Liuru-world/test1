@@ -28,4 +28,14 @@ public class UserServiceImpl implements UserService {
     public Integer insertUser(User user) {
         return userMapper.insertUser(user);
     }
+
+    @Override
+    public Integer updateUser(User user) {
+        return userMapper.updateUser(user);
+    }
+
+    @Override
+    public Integer deleteUserById(Integer id) {
+        return userMapper.deleteUserById(id);
+    }
 }
