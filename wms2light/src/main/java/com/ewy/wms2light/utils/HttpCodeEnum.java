@@ -11,8 +11,8 @@ public enum HttpCodeEnum {
     SERVER_ERROR(500,"SERVER_ERROR");
 
     //HTTP返回码和返回信息的变量
-    private Integer httpCode;
-    private String httpMsg;
+    private final Integer httpCode;
+    private final String httpMsg;
 
     //通过构造函数传入HTTP返回码和返回信息
     HttpCodeEnum(Integer code,String msg) {
@@ -28,11 +28,4 @@ public enum HttpCodeEnum {
         return httpMsg;
     }
 
-    public void setHttpCode(Integer httpCode) {
-        this.httpCode = httpCode;
-    }
-
-    public void setHttpMsg(String httpMsg) {
-        this.httpMsg = httpMsg;
-    }
 }

@@ -9,6 +9,10 @@ import java.security.NoSuchAlgorithmException;
      */
     public class MD5Util {
 
+        private MD5Util(){
+
+        }
+
         public static String stringToMD5(String plainText) {
             byte[] mdBytes = null;
             try {
