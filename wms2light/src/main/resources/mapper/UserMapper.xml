@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ewy.wms2light.mapper.UserMapper">
+    <select id="findById" parameterType="Integer" resultType="User">
+        SELECT * FROM W_USER WHERE id = #{id}
+    </select>
+
+    <select id="findUsers" resultType="List">
+        SELECT * FROM W_USER
+    </select>
+
+    <insert id="insertUser" parameterType="User">
+        INSERT INTO W_USER VALUES(wuser_seq.nextval,#{name},#{password},#{warehouseno},#{phonenumber},#{roleno}
+    </insert>
+
+    <update id="updateUser" parameterType="User">
+        UPDATE W_USER SET name = #{name},password = #{password},warehouseno = #{warehouseno},
+        phonenumber = #{phonenumber},roleno = #{roleno} WHERE id = #{id
+    </update>
+
+    <delete id="deleteUserById" parameterType="Integer">
+        DELETE FROM W_USER WHERE id = #{id}
+    </delete>
+
+</mapper>
