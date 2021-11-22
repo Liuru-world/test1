@@ -1,0 +1,29 @@
+2021-11-22 11:57:49 ERROR restartedMain org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    com.ewy.wms2light.Swagger2Config.createRestApi(Swagger2Config.java:21)
+
+The following method did not exist:
+
+    springfox.documentation.builders.RequestHandlerSelectors.basePackage(Ljava/lang/String;)Lcom/google/common/base/Predicate;
+
+The method's class, springfox.documentation.builders.RequestHandlerSelectors, is available from the following locations:
+
+    jar:file:/E:/Maven-repository/io/springfox/springfox-core/3.0.0/springfox-core-3.0.0.jar!/springfox/documentation/builders/RequestHandlerSelectors.class
+
+The class hierarchy was loaded from the following locations:
+
+    springfox.documentation.builders.RequestHandlerSelectors: file:/E:/Maven-repository/io/springfox/springfox-core/3.0.0/springfox-core-3.0.0.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of springfox.documentation.builders.RequestHandlerSelectors
+
