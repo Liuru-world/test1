@@ -4,6 +4,7 @@ import com.ewy.wms2light.entity.Good;
 import com.ewy.wms2light.entity.User;
 import com.ewy.wms2light.mapper.GoodMapper;
 import com.ewy.wms2light.mapper.UserMapper;
+import com.ewy.wms2light.service.LogService;
 import com.ewy.wms2light.utils.MD5Util;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ class Wms2lightApplicationTests {
     private UserMapper userMapper;
     @Autowired
     private GoodMapper goodMapper;
+    @Autowired
+    private LogService logService;
     @Test
     void contextLoads() {
     }
@@ -56,4 +59,10 @@ class Wms2lightApplicationTests {
         List<Good> goods = goodMapper.getGoodsByStockoutno("stout01");
         System.out.println(goods);
     }
+
+    @Test
+    public void getLogsTest(){
+        System.out.println(logService.getLogs());
+    }
+
 }
