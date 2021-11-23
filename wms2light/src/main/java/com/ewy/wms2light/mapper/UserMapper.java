@@ -16,6 +16,8 @@ public interface UserMapper {
 //    @Select("SELECT * FROM W_USER")
     public List<User> findUsers();
 
+    public List<User> findUsersByName(String keyWord);
+
 //    @Insert("INSERT INTO W_USER VALUES(wuser_seq.nextval,#{name},#{password},#{warehouseno},#{phonenumber},#{roleno})")
     public Integer insertUser(User user);
 

@@ -44,11 +44,24 @@ public class UserController {
         }
     }
 
-    // 返回所有用户
+    // 按名字查询用户
     @GetMapping("/userlist")
     public HttpReturn getUsers(){
         try {
             List<User> users = userService.getUsers();
+            log.info("查询用户列表成功");
+            return new HttpReturn(HttpCodeEnum.OK,users);
+        }catch (Exception e){
+            log.error("查询用户列表失败");
+            throw new ParamException(400,"查询用户列表失败");
+        }
+    }
+
+    // 返回所有用户
+    @GetMapping("/userlistByName/{name}")
+    public HttpReturn getUsersByName(@PathVariable(value = "name") String keyWord){
+        try {
+            List<User> users = userService.getUsersByName(keyWord);
             log.info("查询用户列表成功");
             return new HttpReturn(HttpCodeEnum.OK,users);
         }catch (Exception e){
@@ -62,9 +75,8 @@ public class UserController {
     public HttpReturn insertUser(){
         try {
             User user = new User();
-            user.setName("test3");
+            user.setName("test1");
             user.setPassword("12345678");
-            user.setPhonenumber("18718795795");
             user.setWarehouseno("A88888888");
             user.setRoleno("1");
             Integer i = userService.insertUser(user);
@@ -81,12 +93,8 @@ public class UserController {
     public HttpReturn updateUser(){
         try {
             User user = new User();
-            user.setId(3);
-            user.setName("test3");
-            user.setPassword("12345678910");
-            user.setPhonenumber("18718795795");
-            user.setWarehouseno("A88888888");
-            user.setRoleno("1");
+            user.setId(8);
+            user.setPhonenumber("88888888888");
             Integer i = userService.updateUser(user);
             log.info("修改用户成功");
             return new HttpReturn(HttpCodeEnum.OK,"成功修改" + i + "名用户");

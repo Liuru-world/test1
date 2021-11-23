@@ -25,6 +25,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> getUsersByName(String keyWord) {
+        return userMapper.findUsersByName(keyWord);
+    }
+
+    @Override
     public Integer insertUser(User user) {
         return userMapper.insertUser(user);
     }
