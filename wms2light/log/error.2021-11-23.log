@@ -239,3 +239,11 @@ Caused by: java.lang.IllegalArgumentException: No enum constant org.apache.ibati
 	at org.apache.ibatis.builder.BaseBuilder.resolveJdbcType(BaseBuilder.java:71)
 	... 90 common frames omitted
 2021-11-23 11:21:19 ERROR http-nio-8080-exec-5 com.ewy.wms2light.controller.UserController 查询用户列表失败
+2021-11-23 13:22:30 ERROR http-nio-8080-exec-1 com.ewy.wms2light.controller.GoodController 根据出库单号查询货品失败
+2021-11-23 13:24:09 ERROR http-nio-8080-exec-9 com.ewy.wms2light.controller.GoodController 根据出库单号查询货品失败
+2021-11-23 13:28:23 ERROR http-nio-8080-exec-4 com.ewy.wms2light.controller.GoodController 根据出库单号查询货品失败
+2021-11-23 13:30:47 ERROR http-nio-8080-exec-10 com.ewy.wms2light.controller.GoodController 根据出库单号查询货品失败
+2021-11-23 13:33:05 ERROR http-nio-8080-exec-10 com.ewy.wms2light.controller.GoodController 根据出库单号查询货品失败
+2021-11-23 13:38:33 ERROR http-nio-8080-exec-10 com.ewy.wms2light.controller.GoodController 根据出库单号查询货品失败
+2021-11-23 13:39:24 ERROR http-nio-8080-exec-1 com.ewy.wms2light.controller.GoodController 根据出库单号查询货品失败
+2021-11-23 13:41:15 ERROR http-nio-8080-exec-5 com.ewy.wms2light.controller.GoodController 根据出库单号查询货品失败

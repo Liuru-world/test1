@@ -1,6 +1,8 @@
 package com.ewy.wms2light;
 
+import com.ewy.wms2light.entity.Good;
 import com.ewy.wms2light.entity.User;
+import com.ewy.wms2light.mapper.GoodMapper;
 import com.ewy.wms2light.mapper.UserMapper;
 import com.ewy.wms2light.utils.MD5Util;
 import org.junit.jupiter.api.Test;
@@ -9,10 +11,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @SpringBootTest
 class Wms2lightApplicationTests {
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private GoodMapper goodMapper;
     @Test
     void contextLoads() {
     }
@@ -43,5 +49,11 @@ class Wms2lightApplicationTests {
         System.out.println("get users");
         ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:8080/user/userlist",String.class);
         System.out.println(entity.getBody());
+    }
+
+    @Test
+    public void goodMapperTest(){
+        List<Good> goods = goodMapper.getGoodsByStockoutno("stout01");
+        System.out.println(goods);
     }
 }
