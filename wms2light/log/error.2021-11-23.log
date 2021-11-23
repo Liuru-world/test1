@@ -247,3 +247,6 @@ Caused by: java.lang.IllegalArgumentException: No enum constant org.apache.ibati
 2021-11-23 13:38:33 ERROR http-nio-8080-exec-10 com.ewy.wms2light.controller.GoodController 根据出库单号查询货品失败
 2021-11-23 13:39:24 ERROR http-nio-8080-exec-1 com.ewy.wms2light.controller.GoodController 根据出库单号查询货品失败
 2021-11-23 13:41:15 ERROR http-nio-8080-exec-5 com.ewy.wms2light.controller.GoodController 根据出库单号查询货品失败
+2021-11-23 17:05:02 ERROR http-nio-8080-exec-10 com.ewy.wms2light.controller.GoodController 根据条码查询货品失败
+2021-11-23 17:06:14 ERROR http-nio-8080-exec-4 com.ewy.wms2light.controller.GoodController 根据条码查询货品失败
+2021-11-23 17:20:39 ERROR http-nio-8080-exec-9 com.ewy.wms2light.controller.GoodController 根据条码查询货品失败

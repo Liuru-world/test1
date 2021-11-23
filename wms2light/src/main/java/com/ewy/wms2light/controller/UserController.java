@@ -93,7 +93,7 @@ public class UserController {
     public HttpReturn updateUser(){
         try {
             User user = new User();
-            user.setId(8);
+            user.setId(10);
             user.setPhonenumber("88888888888");
             Integer i = userService.updateUser(user);
             log.info("修改用户成功");

@@ -19,8 +19,8 @@ public class GoodServiceImpl implements GoodService {
     }
 
     @Override
-    public Good getGoodByBarcode(String barcode) {
-        return goodMapper.getGoodByBarcode(barcode);
+    public Good getGoodByBarcode(Good good) {
+        return goodMapper.getGoodByBarcode(good);
     }
 
     @Override

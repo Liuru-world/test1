@@ -42,13 +42,13 @@ public class GoodController {
             }
     }
 
-    //按条码查询
+    //按条码、分拣单号查询
     @GetMapping("/goodByBarcode/{barcode}")
-    public HttpReturn getGoodByBarcode(@PathVariable String barcode){
+    public HttpReturn getGoodByBarcode(Good good){
         try {
-            Good good = goodService.getGoodByBarcode(barcode);
+            Good good1 = goodService.getGoodByBarcode(good);
             log.info("根据条码查询货品成功");
-            return new HttpReturn(HttpCodeEnum.OK,good);
+            return new HttpReturn(HttpCodeEnum.OK,good1);
         }catch (Exception e){
             log.error("根据条码查询货品失败");
             throw new ParamException(400,"根据条码查询货品失败");
@@ -66,7 +66,7 @@ public class GoodController {
             throw new ParamException(400,"根据出库单号查询货品失败");
         }
     }
-    //按条码修改
+    //按条码、分拣单号修改
     @PostMapping("/goodUpdateByBarcode")
     public HttpReturn updateGoodByBarcode(Good good){
         try {

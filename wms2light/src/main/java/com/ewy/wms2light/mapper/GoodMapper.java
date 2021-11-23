@@ -10,7 +10,7 @@ public interface GoodMapper {
     //查询所有
     public List<Good> getGoods();
     //按条码查询
-    public Good getGoodByBarcode(String barcode);
+    public Good getGoodByBarcode(Good good);
     //按出库单号查询
     public List<Good> getGoodsByStockoutno(String stockoutno);
     //按条码修改

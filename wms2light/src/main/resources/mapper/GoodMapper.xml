@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ewy.wms2light.mapper.GoodMapper">
-    <select id="getGoodByBarcode" parameterType="string" resultType="Good">
+    <select id="getGoodByBarcode" parameterType="Good" resultType="Good">
         SELECT * FROM W_STOCK_DETAIL
-        WHERE barcode = #{barcode}
+        WHERE barcode = #{barcode} and pickno = #{pickno}
     </select>
 
     <select id="getGoods" resultType="Good">
@@ -15,7 +15,7 @@
         WHERE stockoutno = #{stockoutno}
     </select>
 
-    <update id="updateGoodByBarcode" parameterType="string">
+    <update id="updateGoodByBarcode" parameterType="Good">
         UPDATE W_STOCK_DETAIL
         <set>
             <if test="stockoutno != null and stockoutno != ''">
@@ -34,7 +34,7 @@
                 statusno = #{statusno},
             </if>
         </set>
-        WHERE barcode = #{barcode}
+        WHERE barcode = #{barcode} and pickno = #{pickno}
     </update>
 
 </mapper>
