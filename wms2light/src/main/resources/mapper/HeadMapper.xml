@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ewy.wms2light.mapper.GoodMapper">
+    <select id="getGoodByBarcode" parameterType="string" resultType="Good">
+        SELECT * FROM W_STOCK_DETAIL
+        WHERE barcode = #{barcode}
+    </select>
+
+    <select id="getGoods" resultType="Good">
+        SELECT * FROM W_STOCK_DETAIL
+    </select>
+
+    <select id="getGoodsByStockoutno" parameterType="string" resultType="Good">
+        SELECT * FROM W_STOCK_DETAIL
+        WHERE stockoutno = #{stockoutno}
+    </select>
+
+    <update id="updateGoodByBarcode" parameterType="string">
+        UPDATE W_STOCK_DETAIL
+        <set>
+            <if test="stockoutno != null and stockoutno != ''">
+                stockoutno = #{stockoutno},
+            </if>
+
+            scandate = sysdate,
+
+            <if test="scanby != null and scanby != ''">
+                scanby = #{scanby},
+            </if>
+            <if test="color != null and color != ''">
+                color = #{color},
+            </if>
+            <if test="statusno != null and statusno != ''">
+                statusno = #{statusno},
+            </if>
+        </set>
+        WHERE barcode = #{barcode}
+    </update>
+
+</mapper>
